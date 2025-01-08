@@ -1,4 +1,4 @@
-#Saisie des Noms et Notes
+# Saisie des Noms et Notes
 noms_etudiants = []
 notes_etudiants = []
 
@@ -23,3 +23,13 @@ for i in range(1, nombre_etudiants + 1):
 print("\nÉtudiants et leurs notes :")
 for i in range(nombre_etudiants):
     print(f"{noms_etudiants[i]} : {notes_etudiants[i]}/20")
+
+# Fonction pour calculer la moyenne
+def calculer_moyenne(notes):
+    if len(notes) == 0:
+        return 0  # Évite la division par zéro si la liste est vide
+    return sum(notes) / len(notes)
+
+# Calcul et affichage de la moyenne de la classe
+moyenne_classe = calculer_moyenne(notes_etudiants)
+print(f"\nLa moyenne de la classe est de {moyenne_classe:.2f}.")
